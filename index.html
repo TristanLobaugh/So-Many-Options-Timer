@@ -1,9 +1,153 @@
+<!-- Homework
+
+CSS Practice
+Make the memory game so that every div has a set position of absolute, except for the wrapper.
+
+CSS option
+1. Layout your timer so it looks like this: http://www.october212015.com/images/timecircuits.jpg
+2. Layout your dragon game so it looks like a card. I.e. http://orig01.deviantart.net/8eff/f/2012/161/b/8/trogdor__the_burninator_by_shinobigarth-d52xls2.png
+http://orig06.deviantart.net/25fa/f/2008/174/7/8/card_shine_dragon_by_rpd490.jpg
+Don't use these images... write CSS to get it close!
+
+JS options
+1. On page load, give the user a drop down or text field
+for each: year, month, day, and hour.
+2. Whatever the user puts in, count down from that.
+3. Give the user three choices of what they want to count down to. Each should be a button, and should run the program. I.e., enter your date info, choose a button:
+[kickoff classic] [zombie apocalypse] [Colonization of the moon]. As soon as the user clicks on the button, the timer starts, and the text reflects what they are counting down to.
+
+BONUS:
+4. Give a background that is unique to each of the three options.
+5. Give the user the option of choosing all 3 counters. In this case, the timers should each take up 33% of the screen and have a unique background.
+
+SUPER BONUS:
+6. Give the user the option to pause the timer. Consider the JS method "clearInterval"
+7. If the user chose one option, have the other options count in the background anyway. If one of them goes off before the chosen one does, alert the user. I.e., The kickoff classic just occured. Good luck as you wait for the zombie apoc!
+
+ULTRA BONUS:
+8. Move the counter from corner to corner, going clockwise, every 10 seconds. Consider using absolute positioning and updating the style.top/bottom and style.left/right whenver it is time to move the timer div.
+Use document.getElementById('user-year-field').value to 
+find the value of that input. -->
+
 <!DOCTYPE html>
 <html>
 <head>
 	<title>So Many Options</title>
+	<link rel="stylesheet" type="text/css" href="css/reset.css">
+	<link rel="stylesheet" type="text/css" href="css/styles.css">
+	<link href='https://fonts.googleapis.com/css?family=Courgette' rel='stylesheet' type='text/css'>
+	<link href='https://fonts.googleapis.com/css?family=Oswald' rel='stylesheet' type='text/css'>
 </head>
 <body>
 
+	<div id="timer-wrapper">
+
+		<div id="pick-a-time-wrapper">
+			<div class="headers">
+				<h1 id="intro">Please enter a date and time you would like to count down to.</h1>
+				<h1 id="trap=header">Countdown to the destruction of the Deathstar!</h1>
+				<h1 id="lighting-header">Countdown to when lighting will hit the Clocktower!</h1>
+				<h1 id="launch-header">Countdown to launch of the shuttle!</h1>
+			</div>
+			<div id="time-picker-wrapper">
+				<div class="number-picker" id="year-wrapper">
+					<div class="number-header">YEAR</div>
+					<div class="number-box" id="year">2016</div>
+					<div onclick="add('year');" class="add"><img src="img/plus.png"></div>
+					<div onclick="subtract('year');"class="subtract"><img src="img/minus.png"></div>
+				</div>
+				<div class="number-picker" id="month-wrapper">
+					<div class="number-header">MONTH</div>
+					<div class="number-box" id="month">3</div>
+					<div onclick="add('month');" class="add"><img src="img/plus.png"></div>
+					<div onclick="subtract('month');"class="subtract"><img src="img/minus.png"></div>
+				</div>
+				<div class="number-picker" id="day-wrapper">
+					<div class="number-header">DAY</div>
+					<div class="number-box" id="day">6</div>
+					<div onclick="add('day');" class="add"><img src="img/plus.png"></div>
+					<div onclick="subtract('day');"class="subtract"><img src="img/minus.png"></div>
+				</div>
+				<div class="number-picker" id="hour-wrapper">
+					<div class="number-header">HOUR</div>
+					<div class="number-box" id="hour">20</div>
+					<div onclick="add('hour');" class="add"><img src="img/plus.png"></div>
+					<div onclick="subtract('hour');"class="subtract"><img src="img/minus.png"></div>
+				</div>
+				<div class="number-picker" id=minute-wrapper>
+					<div class="number-header">MINUTE</div>
+					<div class="number-box" id="minute">0</div>
+					<div onclick="add('minute');" class="add"><img src="img/plus.png"></div>
+					<div onclick="subtract('minute');"class="subtract"><img src="img/minus.png"></div>
+				</div>
+				<div class="number-picker" id="second-wrapper">
+					<div class="number-header">SECOND</div>
+					<div class="number-box" id="second">0</div>
+					<div onclick="add('second');" class="add"><img src="img/plus.png"></div>
+					<div onclick="subtract('second');"class="subtract"><img src="img/minus.png"></div>
+				</div>				
+			</div>
+		</div>
+		
+		<div id="timer"></div>
+		
+		<div class="drop-down">
+			
+			<button onclick="myOptions()" class="drop-down-button">Which timer would you like to try?!</button>
+			<div id="my-drop-down" class="content">
+				<a href="#">It's A Trap!</a>
+				<a href="#">Back In Time</a>
+				<a href="#">Shuttle Launch</a>
+			</div>
+
+		</div>
+		
+		<div class="timer">
+			<div id="its-a-trap">
+				
+
+			</div>
+		</div>
+
+		<div class="timer">
+			<div id="back-in-time">
+				
+
+			</div>
+		</div>
+
+		<div class="timer">
+			<div id="shuttle">
+				
+			</div>
+		</div>
+
+	</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	<script type="text/javascript" src="js/scripts.js"></script>
 </body>
 </html>
