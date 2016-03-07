@@ -28,14 +28,59 @@ window.onclick = function(event)	{
 
 function add(id)	{
 	var value = document.getElementById(id).innerHTML;
-	value++;
-	document.getElementById(id).innerHTML = value;
+		if(id === "second" && value == 59)	{
+			document.getElementById("minute").innerHTML = parseInt(document.getElementById("minute").innerHTML) + 1;
+			document.getElementById("second").innerHTML = 0;
+		}
+		else if(id === "minute" && value == 59)	{
+			document.getElementById("hour").innerHTML = parseInt(document.getElementById("hour").innerHTML) + 1;
+			document.getElementById("minute").innerHTML = 0;
+		}
+		else if(id === "hour" && value == 23)	{
+			document.getElementById("day").innerHTML = parseInt(document.getElementById("day").innerHTML) + 1;
+			document.getElementById("hour").innerHTML = 0;
+		}
+		else if(id === "day" && value == 31)	{
+			document.getElementById("month").innerHTML = parseInt(document.getElementById("month").innerHTML) + 1;
+			document.getElementById("day").innerHTML = 1;
+		}
+		else if(id === "month" && value == 12)	{
+			document.getElementById("year").innerHTML = parseInt(document.getElementById("year").innerHTML) + 1;
+			document.getElementById("month").innerHTML = 1;
+		}
+		else{
+			value++;
+			document.getElementById(id).innerHTML = value;
+		}
+		
 }
 
 function subtract(id)	{
 	var value = document.getElementById(id).innerHTML;
-	value--;
-	document.getElementById(id).innerHTML = value;
+		if(id === "second" && value == 0)	{
+			document.getElementById("minute").innerHTML = parseInt(document.getElementById("minute").innerHTML) - 1;
+			document.getElementById("second").innerHTML = 59;
+		}
+		else if(id === "minute" && value == 0)	{
+			document.getElementById("hour").innerHTML = parseInt(document.getElementById("hour").innerHTML) - 1;
+			document.getElementById("minute").innerHTML = 59;
+		}
+		else if(id === "hour" && value == 0)	{
+			document.getElementById("day").innerHTML = parseInt(document.getElementById("day").innerHTML) - 1;
+			document.getElementById("hour").innerHTML = 23;
+		}
+		else if(id === "day" && value == 1)	{
+			document.getElementById("month").innerHTML = parseInt(document.getElementById("month").innerHTML) - 1;
+			document.getElementById("day").innerHTML = 31;
+		}
+		else if(id === "month" && value == 1)	{
+			document.getElementById("year").innerHTML = parseInt(document.getElementById("year").innerHTML) - 1;
+			document.getElementById("month").innerHTML = 12;
+		}
+	else{
+		value--;
+		document.getElementById(id).innerHTML = value;
+	}
 }
 // Gets the current time plus secsonds and assigns it to the time-picker.
 function initTime()	{
