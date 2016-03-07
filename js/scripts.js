@@ -184,7 +184,7 @@ function countDownTimer(sentTimeLeft){
 				document.body.style.backgroundImage = "url(./img/deathstar.gif";
 			}else if(document.getElementById("lighting-header").style.display === "block") {
 				document.getElementById("lighting-header").style.display = "none";
-				document.body.style.backgroundImage = "url(./img/clocktower.gif";
+				document.body.style.backgroundImage = "url(./img/car.gif";
 			}else if(document.getElementById("launch-header").style.display === "block") {
 				document.getElementById("launch-header").style.display = "none";
 				document.body.style.backgroundImage = "url(./img/shuttle.gif";
