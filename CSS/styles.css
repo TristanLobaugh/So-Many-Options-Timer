@@ -1,75 +1,58 @@
-html{
-  background: url("../img/slate2.jpg") no-repeat center center fixed; 
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
-}
 body{
-		/*background: url("../img/slate2.jpg") 50% 50% no-repeat;*/
-		font-family: 'Courgette', cursive;
+	background: url("../img/slate2.jpg") no-repeat center center fixed; 
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+
+	font-family: 'Courgette', cursive;
+}
+#timer-wrapper{
+	max-width: 100%;
+	position: relative;
+	text-align: center;
+	margin: auto;
 }
 
-h1{
+#pick-a-time-wrapper{
+	text-align: center;
+	margin: auto;
+	width: 80%;
+}
+.time-managers img{
+	width: 90px;
+	height: 90px
+}
+
+#pause-button{
+	position: absolute;
+	left:25px;
+	top: 25px;
+	display: none;
+}
+
+#reset-button{
+	position: absolute;
+	right: 25px;
+	top: 25px;
+}
+
+.headers{
 	min-height: 140px;
 	font-size: 60px;
 	padding: 10px;
+}
+
+h1{
 	display: none;
-}
-#timer-wrapper{
-	text-align: center;
-	margin: auto;
-	max-width: 1020px;
-
-
+	color: #fff;
 }
 
-.drop-down-button {
-    background-color: #4CAF50;
-    color: white;
-    padding: 16px;
-    font-size: 16px;
-    border: 2px solid black;
-    border-radius: 5%;
-
-    cursor: pointer;
-}
-
-.drop-down-button:hover{
-	background-color: #3e8e41;
-}
-
-.drop-down{
-	position: relative;
-	display: inline-block;
-	margin-top: 20px;
-}
-
-.content{
-	display: none;
-	position: absolute;
-	background-color: #f9f9f9;
-	width: 100%;
-	border: 1px solid black;
-	border-radius: 5%;
-}
-
-.content a{
-	color: black;
-	padding: 12px 16px;
-	text-decoration: none;
+#intro{
 	display: block;
 }
 
-.content a:hover{
-	background-color: #f1f1f1;
-}
-
-.show{
-	display: block;
-}
-
-#time-picker-wrapper{
+#time-picker-wrapper, #countdown-timer{
 	position: relative;
 	font-family: 'Oswald', sans-serif;
 	color: #fff;
@@ -83,6 +66,15 @@ h1{
 	border-radius: 5%;
 	min-width: 130px;
 	margin: 10px;
+}
+
+#countdown-timer .number-picker{
+	display: inline-block;
+	background-color: none;
+	border-radius: 5%;
+	min-width: 130px;
+	margin: 10px;
+	border: 1px solid #fff;
 }
 
 .number-header{
@@ -109,6 +101,53 @@ img{
 	height: 30px;
 }
 
+#countdown-timer{
+	display: none;
+}
+
+#drop-down{
+	position: relative;
+	display: inline-block;
+	margin-top: 20px;
+}
+
+.drop-down-button{
+    background-color: #c0c0c0;
+    color: white;
+    padding: 16px;
+    font-size: 16px;
+    border: 2px solid black;
+    border-radius: 5%;
+    cursor: pointer;
+}
+
+.drop-down-button:hover{
+	background-color: #9a9a9a;
+}
+
+.content{
+	display: none;
+	position: absolute;
+	background-color: #f9f9f9;
+	width: 100%;
+	border: 1px solid black;
+}
+
+.content div{
+	color: black;
+	padding: 12px 16px;
+	text-decoration: none;
+	display: block;
+}
+
+.content div:hover{
+	background-color: #f1f1f1;
+	border: 1px solid black;
+}
+
+.show{
+	display: block;
+}
 
 
 

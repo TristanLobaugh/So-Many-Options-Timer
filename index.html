@@ -41,13 +41,16 @@ find the value of that input. -->
 <body>
 
 	<div id="timer-wrapper">
-
+		<div class="time-managers">
+					<div id="pause-button" onclick="pauseTimer();"><img src="img/pause.png"></div>
+					<div id="reset-button" onclick="location.reload();"><img src="img/reset.png"></div>
+		</div>
 		<div id="pick-a-time-wrapper">
 			<div class="headers">
 				<h1 id="intro">Please enter a date and time you would like to count down to.</h1>
-				<h1 id="trap=header">Countdown to the destruction of the Deathstar!</h1>
+				<h1 id="trap-header">Countdown to the destruction of the Deathstar!</h1>
 				<h1 id="lighting-header">Countdown to when lighting will hit the Clocktower!</h1>
-				<h1 id="launch-header">Countdown to launch of the shuttle!</h1>
+				<h1 id="launch-header">Countdown to launch of the shuttle!</h1>			
 			</div>
 			<div id="time-picker-wrapper">
 				<div class="number-picker" id="year-wrapper">
@@ -89,15 +92,37 @@ find the value of that input. -->
 			</div>
 		</div>
 		
-		<div id="timer"></div>
+		<div id="countdown-timer">
+			<div class="number-picker">
+				<div class="number-header">Weeks</div>
+				<div class="number-box" id="weeks"></div>				
+			</div>
+			<div class="number-picker">
+				<div class="number-header">Days</div>
+				<div class="number-box" id="days"></div>				
+			</div>
+			<div class="number-picker">
+				<div class="number-header">Hours</div>
+				<div class="number-box" id="hours"></div>				
+			</div>
+			<div class="number-picker">
+				<div class="number-header">Minutes</div>
+				<div class="number-box" id="minutes"></div>				
+			</div>
+			<div class="number-picker">
+				<div class="number-header">Seconds</div>
+				<div class="number-box" id="seconds"></div>				
+			</div>
+
+		</div>
 		
-		<div class="drop-down">
+		<div id="drop-down">
 			
-			<button onclick="myOptions()" class="drop-down-button">Which timer would you like to try?!</button>
+			<button onclick="myOptions();" class="drop-down-button">Which countdown would you like to try?</button>
 			<div id="my-drop-down" class="content">
-				<a href="#">It's A Trap!</a>
-				<a href="#">Back In Time</a>
-				<a href="#">Shuttle Launch</a>
+				<div id="option-trap" onclick="transitionTrap();">It's A Trap!</div>
+				<div id="option-time" onclick="transitionTime();">Back In Time</div>
+				<div id="option-shuttle" onclick="transitionShuttle();">Shuttle Launch</div>
 			</div>
 
 		</div>
